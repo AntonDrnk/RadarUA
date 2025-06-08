@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Навигатор с Радаром</title>
+    
+    <link rel="manifest" href="manifest.json">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder@1.13.0/dist/Control.Geocoder.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="map"></div>
+
+    <div class="ui-controls">
+        <button id="follow-btn" title="Следовать за мной">📍</button>
+        <button id="theme-switcher">🌙</button>
+    </div>
+
+    <div class="container">
+        <div id="alert" class="alert hidden">
+            🚨 УВАГА! ПРИБЛИЖЕННЯ ДО КАМЕРИ! 🚨
+        </div>
+        <div class="info-card"> 
+            <div class="stats-container">
+                <div class="stat-block">
+                    <h2>Найближча Камера</h2>
+                    <p id="camera-address">-</p>
+                </div>
+                <div class="stat-block">
+                    <h2>Відстань</h2>
+                    <p id="camera-distance">-</p>
+                </div>
+                <div class="stat-block">
+                    <h2>Швидкість</h2>
+                    <p><span id="speed-value">--</span> км/год</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <audio id="warningSound" src="warning.mp3" preload="auto"></audio>
+     
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder@1.13.0/dist/Control.Geocoder.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
